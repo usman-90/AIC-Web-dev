@@ -1,11 +1,11 @@
 import Home from "../Components/Screens/Home/Home";
 import Contact from "../Components/Screens/Contact/Contact";
-import { Route, Routes } from "react-router-dom";
 import About from "../Components/Screens/About/About";
 import Login from "../Components/Screens/admin/Login";
 import Reset from "../Components/Screens/admin/Reset";
 import AdminPage from "../Components/Screens/admin/adminpg";
 import Events from "../Components/Screens/Events/Events"
+import { Route, Routes } from "react-router-dom";
 
 const Router = () => {
   return (

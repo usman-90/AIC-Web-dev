@@ -1,8 +1,10 @@
+
 import './Home.css';
 import TeamSlider from './Sliders/TeamSliders';
 import SponsorSlider from './Sliders/SponsorSliders';
 import MainSlider from './Sliders/mainSlider';
 import HomeText from './HomeText/HomeText';
+
 
 const Home = () => {
   return (
@@ -12,6 +14,7 @@ const Home = () => {
                 <TeamSlider/>
                 <SponsorSlider/>
     </div>
+
   );
 };
 

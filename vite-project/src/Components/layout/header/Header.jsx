@@ -6,6 +6,8 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { useGlobalContext } from "../../../context/context";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../firebase/config";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 const logo = (
@@ -66,12 +68,12 @@ window.addEventListener("scroll", changeColor);
   const logoutUser = () => {
     signOut(auth)
       .then(() => {
-        // toast.success("Logout Successful");
+        toast.success("Logout Successful");
         setIsLoggedin(false)
         navigate("/");
       })
       .catch((error) => {
-        // toast.error(error.message);
+        toast.error(error.message);
       });
   };
 
@@ -83,6 +85,7 @@ window.addEventListener("scroll", changeColor);
 
   return (
     <>
+    <ToastContainer/>
       <header id="header" className="fixed" >
         <div className="header">
           {logo}
@@ -133,6 +136,9 @@ window.addEventListener("scroll", changeColor);
                   </NavLink>}
                 {!isLoggedin && <NavLink to="/login" >
                     Login as Admin
+                  </NavLink>}
+                {isLoggedin && <NavLink to="/admin" >
+                    Admin Panel
                   </NavLink>}
               </span>
               

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import style from "./auth.module.scss";
 import forgotImg from "../../../assets/images/reset.jpg";
 import { Link } from "react-router-dom";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { auth } from "../../../firebase/config";
 import { sendPasswordResetEmail } from "firebase/auth";
 import spinnerImg from "../../../assets/images/spinner.jpg";
@@ -19,17 +19,17 @@ const Reset = () => {
       .then(() => {
         setLoading(false);
         setEmail("")
-        // toast.success("Reset link send to your email.");
+        toast.success("Reset link send to your email.");
       })
       .catch((error) => {
         setLoading(false);
-        // toast.error(error.message);
+        toast.error(error.message);
       });
   };
 
   return (
     <>
-      {/* <ToastContainer /> */}
+      <ToastContainer />
       {loading && (
         <div className="loading-container">
         <img
