@@ -17,6 +17,7 @@ const initialState = {
 const AdminPage = () => {
   const [event, setEvent] = useState({ ...initialState });
 
+
   const handelInputChange = (e) => {
     const { name, value } = e.target;
     setEvent({ ...event, [name]: value });
@@ -40,6 +41,7 @@ const AdminPage = () => {
       toast.error(error.message);
     }
   };
+
   return (
     <div>
       <ToastContainer />
