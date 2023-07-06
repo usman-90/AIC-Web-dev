@@ -2,18 +2,19 @@ import { useState } from "react";
 import "./adminpg.css";
 import { db, storage } from "../../../firebase/config";
 import { Timestamp, addDoc, collection, doc, setDoc } from "firebase/firestore";
-// import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const initialState = {
-  name :"",
+  name: "",
   image: "",
-  desc:"",
-  type:"",
-  date:""
-}
+  desc: "",
+  type: "",
+  date: "",
+};
 
 const AdminPage = () => {
-  const [event, setEvent] = useState({...initialState})
+  const [event, setEvent] = useState({ ...initialState });
 
   const handelInputChange = (e) => {
     const { name, value } = e.target;
@@ -31,16 +32,17 @@ const AdminPage = () => {
         type: event.type,
       });
       setEvent(initialState);
-      // toast.success("Product uploaded successfully.");
+      toast.success("Event added successfully.");
     } catch (error) {
       // setIsLoading(false);
-      // toast.error(error.message);
+      toast.error(error.message);
     }
   };
   return (
     <div>
+      <ToastContainer />
       <div className="containerr adminpg">
-        <div className="d-flex  flex-column align-items-center main w-100">
+        <div className="d-flex  flex-column align-items-center mainn w-100">
           <h1 className="text-center mt-3 mb-5 b-bottom h-color">Admin Page</h1>
           <form
             onSubmit={handleSubmit}
@@ -81,7 +83,9 @@ const AdminPage = () => {
                 name="date"
                 onChange={(e) => handelInputChange(e)}
               />
-              <label htmlFor="eventType" style={{"fontSize":"2rem"}}>Event Type:</label>
+              <label htmlFor="eventType" style={{ fontSize: "2rem" }}>
+                Event Type:
+              </label>
               <select
                 id="eventType"
                 value={event.type}

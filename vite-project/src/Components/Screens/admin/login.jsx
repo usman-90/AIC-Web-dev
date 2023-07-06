@@ -10,6 +10,8 @@ import {
 import { auth } from "../../../firebase/config";
 import spinnerImg from "../../../assets/images/spinner.jpg"
 import { useGlobalContext } from "../../../context/context";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -27,21 +29,21 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         setLoading(false);
-        // toast.success("Login Successful");
+        toast.success("Login Successful");
         setEmail("")
         setPassword("")
         setIsLoggedin(true)
         navigate("/");
       })
       .catch((error) => {
-        // toast.error(error.message);
+        toast.error(error.message);
         setLoading(false);
       });
   };
 
   return (
     <>
-      {/* <ToastContainer /> */}
+      <ToastContainer />
       {loading && (
         <div className="loading-container">
            <img
