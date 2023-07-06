@@ -1,0 +1,112 @@
+
+.head_u{
+    width: 100%;
+    margin: 1rem 0px;
+}
+.main-U{
+    width: 100%;
+    text-align: center;
+}
+.h1_u{
+    margin: 100px auto;
+    visibility: hidden;
+    width: max-content;
+    color: white !important;
+
+}
+.form_main_u{
+    /* background: rgb(2,0,36);
+    background: linear-gradient( to bottom right, rgba(2,0,36,1) 0%, rgba(149,0,255,1) 100%); */
+    width: 20rem;
+    background-color: #274d5a;
+    height: 30rem;
+    margin: 0px auto;
+    /* box-shadow: 0px 0px 15px 2px #7c47b2; */
+}
+.form_mainn_u {
+    width: 37rem;
+    background-color: #274d5a;
+    height: 49rem;
+    margin: -42px auto;
+    /* box-shadow: 0px 0px 15px 2px #7c47b2; */
+}
+.fields_u{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    
+}
+.inp_u {
+    color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    width: 95%;
+    margin: 1rem 0px;
+    height: 4rem;
+    background-color: transparent;
+    padding-left: 10px;
+    font-size: 1.5rem;
+} 
+
+.h_u{
+    width: 100%;
+}
+.h2_u{
+    width: max-content;
+    margin-left: 2rem;
+    padding-top: 2.3rem;
+    color: white !important;
+}
+::placeholder{
+    color: rgb(255, 255, 255);
+}
+.inp_u:focus{
+    outline: none;
+}
+.btnn_u{
+    margin: 2rem  2.5rem;
+    margin-top: 3rem !important;
+
+}
+.mybtn_u {
+    background-color: white !important;
+    width: 13rem;
+    color: #274d5a !important;
+    border: 1px solid #274d5a!important;
+    border-radius: 0px !important;
+    transition: ease all 0.35s;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+}
+.mybtn_u:hover{
+    background-color: #274d5a !important;
+    border: 1px solid white !important;
+    color: #ffffff !important;
+    
+}
+.noacc_u{
+    font-size: 14px;
+    margin-top: 1rem;
+    color:#ffffff !important;
+}
+
+.btnlogin_u{
+    margin: 0rem  2.5rem !important;
+
+}
+.create_u{
+    text-decoration: none;
+    color: white;
+    padding-left: 5px;
+}
+.create_u:hover{
+    color:grey
+}
+.loginpg{
+    height: 100vh;
+    width: 100vw;
+}
