@@ -9,7 +9,6 @@ import './OngoingEvents.css'
 import Wrapper from '../../Shared/Wrapper/Wrapper'
 import BlogBox from '../../Shared/EventBox/EventBox'
 import useFetchCollection from '../../Shared/FetchCollection';
-
 const OngoingEvents = () => {
 
   const { data, isLoading } = useFetchCollection("ongoing");
