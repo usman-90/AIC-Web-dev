@@ -39,3 +39,6 @@
   transform: rotateY(180deg);
 
 }
+.bg-darkblue{
+  background-color: #274d5a !important;
+}
