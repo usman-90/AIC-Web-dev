@@ -9,11 +9,13 @@ import {
 } from "firebase/auth";
 import { auth } from "../../../firebase/config";
 import spinnerImg from "../../../assets/images/spinner.jpg"
+import { useGlobalContext } from "../../../context/context";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const {setIsLoggedin} = useGlobalContext()
 
   const navigate = useNavigate();
 
@@ -28,6 +30,7 @@ const Login = () => {
         // toast.success("Login Successful");
         setEmail("")
         setPassword("")
+        setIsLoggedin(true)
         navigate("/");
       })
       .catch((error) => {
