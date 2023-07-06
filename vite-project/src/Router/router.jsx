@@ -5,6 +5,7 @@ import Login from "../Components/Screens/admin/Login";
 import Reset from "../Components/Screens/admin/Reset";
 import AdminPage from "../Components/Screens/admin/adminpg";
 import { Route, Routes } from "react-router-dom";
+import Events from "../Components/Screens/Events/Events";
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
       <Route path="/about" element={<About />} />
       <Route path="/login" element={<Login />} />
       <Route path="/reset" element={<Reset />} />
+      <Route path="/events" element={<Events />} />
     </Routes>
   );
 };
