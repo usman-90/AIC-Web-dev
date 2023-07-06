@@ -10,10 +10,11 @@ const About = () => {
           <h1 className="text-light">About Us</h1>
         </div>
       </div>
+
       <div className="containerr">
-        <div className="h my-5 text-center">
+        <div className="h my-5 text-center py-5">
           <h1>
-            <span className="b-bottom">Our Products</span>
+            <span className="b-bottom my-5">Our Products</span>
           </h1>
         </div>
 
@@ -95,69 +96,75 @@ const About = () => {
             />
           </div>
         </div>
-        <div className="my-5">
-          <h1 className="text-center">
-            <span className="b-bottom">On Going Projects</span>
-          </h1>
+      </div>
+      <div className="bg pb-5">
+        <div className="containerr">
+          <div className="my-5 py-5">
+            <h1 className="text-center my-5">
+              <span className="b-bottom">On Going Projects</span>
+            </h1>
+          </div>
+          <div className="row">
+            <div className="col-md-4 my-3">
+              <Card
+                src={`https://smartcitylab.neduet.edu.pk/images/projects/smart-irrigation-system.jpg`}
+                role={`Smart Irrigation System`}
+                desc={`Smart Irrigation System is the latest IoT technology which is helpful and leads to ease of farming. The engineers at the Smart City Lab has developed the IoT devices that will improve the process of Smart Irrigation. Approximately, 70% of the water withdrawn from various fresh water sources is used for agricultural activities. Majority of the water is wasted due to over watering caused by inefficiencies in traditional irrigation methods and systems.`}
+                name={``}
+                prof={``}
+              />
+            </div>
+            <div className="col-md-4 my-3">
+              <Card
+                src={`https://smartcitylab.neduet.edu.pk/images/projects/smart-irrigation-system.jpg`}
+                role={`Smart Irrigation System`}
+                desc={`Smart Irrigation System is the latest IoT technology which is helpful and leads to ease of farming. The engineers at the Smart City Lab has developed the IoT devices that will improve the process of Smart Irrigation. Approximately, 70% of the water withdrawn from various fresh water sources is used for agricultural activities. Majority of the water is wasted due to over watering caused by inefficiencies in traditional irrigation methods and systems.`}
+                name={``}
+                prof={``}
+              />
+            </div>
+            <div className="col-md-4 my-3">
+              <Card
+                src={`https://smartcitylab.neduet.edu.pk/images/projects/smart-irrigation-system.jpg`}
+                role={`Smart Irrigation System`}
+                desc={`Smart Irrigation System is the latest IoT technology which is helpful and leads to ease of farming. The engineers at the Smart City Lab has developed the IoT devices that will improve the process of Smart Irrigation. Approximately, 70% of the water withdrawn from various fresh water sources is used for agricultural activities. Majority of the water is wasted due to over watering caused by inefficiencies in traditional irrigation methods and systems.`}
+                name={``}
+                prof={``}
+              />
+            </div>
+            <div className="col-md-4 my-3">
+              <Card
+                src={`https://smartcitylab.neduet.edu.pk/images/projects/smart-irrigation-system.jpg`}
+                role={`Smart Irrigation System`}
+                desc={`Smart Irrigation System is the latest IoT technology which is helpful and leads to ease of farming. The engineers at the Smart City Lab has developed the IoT devices that will improve the process of Smart Irrigation. Approximately, 70% of the water withdrawn from various fresh water sources is used for agricultural activities. Majority of the water is wasted due to over watering caused by inefficiencies in traditional irrigation methods and systems.`}
+                name={``}
+                prof={``}
+              />
+            </div>
+            <div className="col-md-4 my-3">
+              <Card
+                src={`https://smartcitylab.neduet.edu.pk/images/projects/smart-irrigation-system.jpg`}
+                role={`Smart Irrigation System`}
+                desc={`Smart Irrigation System is the latest IoT technology which is helpful and leads to ease of farming. The engineers at the Smart City Lab has developed the IoT devices that will improve the process of Smart Irrigation. Approximately, 70% of the water withdrawn from various fresh water sources is used for agricultural activities. Majority of the water is wasted due to over watering caused by inefficiencies in traditional irrigation methods and systems.`}
+                name={``}
+                prof={``}
+              />
+            </div>
+            <div className="col-md-4 my-3">
+              <Card
+                src={`https://smartcitylab.neduet.edu.pk/images/projects/smart-irrigation-system.jpg`}
+                role={`Smart Irrigation System`}
+                desc={`Smart Irrigation System is the latest IoT technology which is helpful and leads to ease of farming. The engineers at the Smart City Lab has developed the IoT devices that will improve the process of Smart Irrigation. Approximately, 70% of the water withdrawn from various fresh water sources is used for agricultural activities. Majority of the water is wasted due to over watering caused by inefficiencies in traditional irrigation methods and systems.`}
+                name={``}
+                prof={``}
+              />
+            </div>
+          </div>
         </div>
-        <div className="row">
-          <div className="col-md-4 my-3">
-            <Card
-              src={`https://smartcitylab.neduet.edu.pk/images/projects/smart-irrigation-system.jpg`}
-              role={`Smart Irrigation System`}
-              desc={`Smart Irrigation System is the latest IoT technology which is helpful and leads to ease of farming. The engineers at the Smart City Lab has developed the IoT devices that will improve the process of Smart Irrigation. Approximately, 70% of the water withdrawn from various fresh water sources is used for agricultural activities. Majority of the water is wasted due to over watering caused by inefficiencies in traditional irrigation methods and systems.`}
-              name={``}
-              prof={``}
-            />
-          </div>
-          <div className="col-md-4 my-3">
-            <Card
-              src={`https://smartcitylab.neduet.edu.pk/images/projects/smart-irrigation-system.jpg`}
-              role={`Smart Irrigation System`}
-              desc={`Smart Irrigation System is the latest IoT technology which is helpful and leads to ease of farming. The engineers at the Smart City Lab has developed the IoT devices that will improve the process of Smart Irrigation. Approximately, 70% of the water withdrawn from various fresh water sources is used for agricultural activities. Majority of the water is wasted due to over watering caused by inefficiencies in traditional irrigation methods and systems.`}
-              name={``}
-              prof={``}
-            />
-          </div>
-          <div className="col-md-4 my-3">
-            <Card
-              src={`https://smartcitylab.neduet.edu.pk/images/projects/smart-irrigation-system.jpg`}
-              role={`Smart Irrigation System`}
-              desc={`Smart Irrigation System is the latest IoT technology which is helpful and leads to ease of farming. The engineers at the Smart City Lab has developed the IoT devices that will improve the process of Smart Irrigation. Approximately, 70% of the water withdrawn from various fresh water sources is used for agricultural activities. Majority of the water is wasted due to over watering caused by inefficiencies in traditional irrigation methods and systems.`}
-              name={``}
-              prof={``}
-            />
-          </div>
-          <div className="col-md-4 my-3">
-            <Card
-              src={`https://smartcitylab.neduet.edu.pk/images/projects/smart-irrigation-system.jpg`}
-              role={`Smart Irrigation System`}
-              desc={`Smart Irrigation System is the latest IoT technology which is helpful and leads to ease of farming. The engineers at the Smart City Lab has developed the IoT devices that will improve the process of Smart Irrigation. Approximately, 70% of the water withdrawn from various fresh water sources is used for agricultural activities. Majority of the water is wasted due to over watering caused by inefficiencies in traditional irrigation methods and systems.`}
-              name={``}
-              prof={``}
-            />
-          </div>
-          <div className="col-md-4 my-3">
-            <Card
-              src={`https://smartcitylab.neduet.edu.pk/images/projects/smart-irrigation-system.jpg`}
-              role={`Smart Irrigation System`}
-              desc={`Smart Irrigation System is the latest IoT technology which is helpful and leads to ease of farming. The engineers at the Smart City Lab has developed the IoT devices that will improve the process of Smart Irrigation. Approximately, 70% of the water withdrawn from various fresh water sources is used for agricultural activities. Majority of the water is wasted due to over watering caused by inefficiencies in traditional irrigation methods and systems.`}
-              name={``}
-              prof={``}
-            />
-          </div>
-          <div className="col-md-4 my-3">
-            <Card
-              src={`https://smartcitylab.neduet.edu.pk/images/projects/smart-irrigation-system.jpg`}
-              role={`Smart Irrigation System`}
-              desc={`Smart Irrigation System is the latest IoT technology which is helpful and leads to ease of farming. The engineers at the Smart City Lab has developed the IoT devices that will improve the process of Smart Irrigation. Approximately, 70% of the water withdrawn from various fresh water sources is used for agricultural activities. Majority of the water is wasted due to over watering caused by inefficiencies in traditional irrigation methods and systems.`}
-              name={``}
-              prof={``}
-            />
-          </div>
-        </div>
-        <div className="my-5">
-          <h1 className="text-center ">
+      </div>
+      <div className="conntainerr">
+        <div className="my-5 py-5">
+          <h1 className="text-center my-5">
             <span className="b-bottom">History</span>
           </h1>
         </div>
