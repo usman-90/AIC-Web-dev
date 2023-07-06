@@ -83,7 +83,7 @@ const AdminPage = () => {
               <input
                 type="date"
                 value={event.date}
-                name="date"
+                name="startDate"
                 onChange={(e) => handelInputChange(e)}
               />
             </div>
@@ -92,7 +92,7 @@ const AdminPage = () => {
               <input
                 type="date"
                 value={event.date}
-                name="date"
+                name="endDate"
                 onChange={(e) => handelInputChange(e)}
               />
             </div>
