@@ -13,7 +13,7 @@ const Card = ({ src, role, name, prof, desc }) => {
           />
           <h3 className="my-1">{role}</h3>
         </div>
-        <div className="px-3 py-3 bg-dark text-light flip-card-back shadow rounded">
+        <div className="px-3 py-3 bg-darkblue text-light flip-card-back shadow rounded">
           <h1 className="text-light">{name}</h1>
           <p className="text-light">{prof}</p>
           <p className="text-light">{desc}</p>
