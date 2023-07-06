@@ -4,6 +4,7 @@ import { GoLocation } from "react-icons/go";
 import { useRef } from "react";
 // import emailjs from "@emailjs/browser";
 import { Cardz } from "../../Shared/cardz/Cardz";
+import Donate from "../../Shared/donate/Donate";
 // import { toast } from "react-toastify";
 
 const Contact = () => {
@@ -96,42 +97,23 @@ const Contact = () => {
               <br />
               <p>
                 <ul>
-                    <li>Expand your brand's visibility to our diverse audience.</li>
-                    <li>Strengthen your reputation as a socially responsible organization.
-                    </li>
-                    <li>Access exclusive networking and collaboration opportunities.</li>
+                  <li>
+                    Expand your brand's visibility to our diverse audience.
+                  </li>
+                  <li>
+                    Strengthen your reputation as a socially responsible
+                    organization.
+                  </li>
+                  <li>
+                    Access exclusive networking and collaboration opportunities.
+                  </li>
                 </ul>
               </p>
             </Cardz>
           </div>
-          <form onSubmit={sendEmail}>
-            <Cardz cardClass={style.card}>
-              <label>Name:</label>
-              <input
-                type="text"
-                name="user_name"
-                placeholder="Full Name"
-                required
-              />
-              <label>Email:</label>
-              <input
-                type="email"
-                name="user_email"
-                placeholder="Active Email"
-                required
-              />
-              <label>Amount:</label>
-              <input
-                type="number"
-                name="subject"
-                placeholder="Amount"
-                required
-              />
-              <button type="submit" className="--btn --btn-primary">
-                Donate
-              </button>
-            </Cardz>
-          </form>
+          <Cardz cardClass={`${style.card} ${style.pay}`}>
+            <Donate />
+          </Cardz>
         </div>
       </div>
     </section>

@@ -2,9 +2,13 @@ import Card from "../../Shared/Card/card";
 import "./about.css";
 import Product from "./product";
 import History from "./history";
+import Login from "../admin/login";
 const About = () => {
   return (
     <div>
+
+   
+      
       <div className="img">
         <div className=" d-flex justify-content-center align-items-center overlay">
           <h1 className="text-light">About Us</h1>
