@@ -5,7 +5,8 @@ import { useRef } from "react";
 // import emailjs from "@emailjs/browser";
 import { Cardz } from "../../Shared/cardz/Cardz";
 import Donate from "../../Shared/donate/Donate";
-// import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import contact from '../../../assets/images/contact.jpg'
 
 const Contact = () => {
   const form = useRef();
@@ -13,13 +14,18 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    alert("message sent");
+    toast.success("Email sent successfuly");
 
     e.target.reset();
   };
 
   return (
-    <section>
+    <>
+    <ToastContainer/>
+    <div className={style.hero}>
+      <img src={contact} alt="" />
+    </div>
+      <section>
       <div className={`container ${style.contact}`}>
         <h2>Contact Us</h2>
         <div className={style.section}>
@@ -117,6 +123,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

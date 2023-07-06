@@ -10,7 +10,8 @@ const initialState = {
   image: "",
   desc: "",
   type: "",
-  date: "",
+  startDate: "",
+  endDate: "",
 };
 
 const AdminPage = () => {
@@ -28,7 +29,8 @@ const AdminPage = () => {
         name: event.name,
         imageURL: event.image,
         desc: event.desc,
-        date: event.date,
+        startDate: event.startDate,
+        endDate: event.endDate,
         type: event.type,
       });
       setEvent(initialState);
@@ -77,13 +79,24 @@ const AdminPage = () => {
               placeholder="Event Description"
             ></textarea>
             <div className="Event Date w-100">
+              <h4>Start Date</h4>
               <input
                 type="date"
                 value={event.date}
                 name="date"
                 onChange={(e) => handelInputChange(e)}
               />
-              <label htmlFor="eventType" style={{ fontSize: "2rem" }}>
+            </div>
+            <div className="Event Date w-100">
+            <h4>End Date</h4>
+              <input
+                type="date"
+                value={event.date}
+                name="date"
+                onChange={(e) => handelInputChange(e)}
+              />
+            </div>
+            <label htmlFor="eventType" style={{ fontSize: "2rem" }}>
                 Event Type:
               </label>
               <select
@@ -97,7 +110,6 @@ const AdminPage = () => {
                 <option value="ongoing">Ongoing</option>
                 <option value="past">Past</option>
               </select>
-            </div>
             <button
               type="submit"
               className="my-5 --btn --btn-primary --btn-block"
