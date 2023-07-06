@@ -1,63 +1,82 @@
-import "./login.css";
 import { useState } from "react";
-const Login = () => {
-  const [credentials, setCredentials] = useState();
-  return (
-    <div className=" containerr loginpg d-flex justify-content-center align-items-center ">
-      <div className="form_mainn_u rounded">
-        <div className="h_u">
-          <h2 className="h2_u">Login.</h2>
-        </div>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-            const obj = {
-              email: formData.get("email"),
-              password: formData.get("password"),
-            };
-            setCredentials(obj);
-            console.log(obj);
-          }}
-        >
-          <div className="fields_u">
-            <label htmlFor="email">
-              <input
-                className="inp_u"
-                id="email"
-                type="email"
-                placeholder="Email"
-                name="email"
-              />
-            </label>
-            <label htmlFor="password">
-              <input
-                className="inp_u"
-                id="password"
-                type="password"
-                placeholder="Password"
-                name="password"
-              />
-            </label>
-            <p className="noacc text-light">
-              Dont have an account?
-              <a className="create_u" href="signup.html">
-                Create account
-              </a>{" "}
-            </p>
-          </div>
+import style from "./auth.module.scss";
+import { Link, useNavigate } from "react-router-dom";
+// import loginImg from "../../assets/login.png";
+import {
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
+import { auth } from "../../../firebase/config";
+import spinnerImg from "../../../assets/images/spinner.jpg"
 
-          <div className="">
-            <button
-              type="submit"
-              className="rounded btnlogin_u btn mybtn_u btn-info"
-            >
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
+
+
+
+  const loginUser = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredentials) => {
+        setLoading(false);
+        // toast.success("Login Successful");
+        setEmail("")
+        setPassword("")
+        navigate("/");
+      })
+      .catch((error) => {
+        // toast.error(error.message);
+        setLoading(false);
+      });
+  };
+
+  return (
+    <>
+      {/* <ToastContainer /> */}
+      {loading && (
+        <div className="loading-container">
+           <img
+              src={spinnerImg}
+            />
+        </div>
+      )}
+      <section className={`container ${style.auth}`}>
+        {/* <div className={style.img}>
+          <img src={loginImg} alt="Login" style={{ width: "400px" }} />
+        </div> */}
+        <div className={style.form}>
+          <h2>Admin Login</h2>
+          <form onSubmit={loginUser}>
+            <input
+              type="email"
+              placeholder="Email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type="submit" className="--btn --btn-primary --btn-block">
               Login
             </button>
-          </div>
-        </form>
-      </div>
-    </div>
+            <div className="links">
+              <Link to="/reset">Reset Password</Link>
+            </div>
+          </form>
+        </div>
+      </section>
+    </>
   );
 };
 
