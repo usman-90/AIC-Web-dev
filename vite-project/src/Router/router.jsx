@@ -5,10 +5,12 @@ import { Route, Routes } from "react-router-dom";
 import About from "../Components/Screens/About/About";
 import Login from "../Components/Screens/admin/Login";
 import Reset from "../Components/Screens/admin/Reset";
+import AdminPage from "../Components/Screens/admin/adminpg";
 
 const Router = () => {
   return (
     <Routes>
+      <Route path="/admin" element={<AdminPage/>}/>
       <Route path="/" element={<Home />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/about" element={<About />} />
