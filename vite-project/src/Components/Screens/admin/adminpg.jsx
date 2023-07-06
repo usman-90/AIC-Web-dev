@@ -1,21 +1,41 @@
 import { useState } from "react";
 import "./adminpg.css";
+import { db, storage } from "../../../firebase/config";
+import { Timestamp, addDoc, collection, doc, setDoc } from "firebase/firestore";
+// import { toast } from "react-toastify";
+
+const initialState = {
+  name :"",
+  image: "",
+  desc:"",
+  type:"",
+  date:""
+}
 
 const AdminPage = () => {
-  const [eventName, setEventName] = useState("");
-  const [eventImage, setEventImage] = useState("");
-  const [eventDesc, setEventDesc] = useState("");
-  const [eventDate, setEventDate] = useState();
+  const [event, setEvent] = useState({...initialState})
+
+  const handelInputChange = (e) => {
+    const { name, value } = e.target;
+    setEvent({ ...event, [name]: value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const eventDetails = {
-      name: eventName,
-      image: eventImage,
-      description: eventDesc,
-      date: eventDate,
-    };
-    console.log(eventDetails);
+    try {
+      const docRef = addDoc(collection(db, "events"), {
+        name: event.name,
+        imageURL: event.image,
+        desc: event.desc,
+        date: event.date,
+        type: event.type,
+      });
+      setEvent(initialState);
+      // toast.success("Product uploaded successfully.");
+    } catch (error) {
+      // setIsLoading(false);
+      // toast.error(error.message);
+    }
   };
   return (
     <div>
@@ -29,29 +49,25 @@ const AdminPage = () => {
             <h2 className="h-color">Add Events</h2>
             <div className="w-100">
               <input
-                value={eventName}
-                onChange={(e) => {
-                  setEventName(e.target.value);
-                }}
+                value={event.name}
+                name="name"
+                onChange={(e) => handelInputChange(e)}
                 type="text"
                 placeholder="Event Name"
               />
             </div>
             <div className="w-100">
               <input
-                value={eventImage}
-                onChange={(e) => {
-                  setEventImage(e.target.value);
-                }}
+                value={event.image}
+                name="image"
+                onChange={(e) => handelInputChange(e)}
                 type="text"
                 placeholder="Event Image Address"
               />
             </div>
             <textarea
-              value={eventDesc}
-              onChange={(e) => {
-                setEventDesc(e.target.value);
-              }}
+              value={event.desc}
+              onChange={(e) => handelInputChange(e)}
               name="desc"
               id=""
               cols="30"
@@ -61,11 +77,22 @@ const AdminPage = () => {
             <div className="Event Date w-100">
               <input
                 type="date"
-                value={eventDate}
-                onChange={(e) => {
-                  setEventDate(e.target.value);
-                }}
+                value={event.date}
+                name="date"
+                onChange={(e) => handelInputChange(e)}
               />
+              <label htmlFor="eventType" style={{"fontSize":"2rem"}}>Event Type:</label>
+              <select
+                id="eventType"
+                value={event.type}
+                name="type"
+                onChange={(e) => handelInputChange(e)}
+              >
+                <option value="">Select an event type</option>
+                <option value="upcoming">Upcoming</option>
+                <option value="ongoing">Ongoing</option>
+                <option value="past">Past</option>
+              </select>
             </div>
             <button
               type="submit"
