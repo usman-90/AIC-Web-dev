@@ -6,7 +6,7 @@ import { useRef } from "react";
 import { Cardz } from "../../Shared/cardz/Cardz";
 import Donate from "../../Shared/donate/Donate";
 import { ToastContainer, toast } from "react-toastify";
-import contact from '../../../assets/images/contact.jpg'
+import HeroSection from "./HeroSection";
 
 const Contact = () => {
   const form = useRef();
@@ -22,9 +22,7 @@ const Contact = () => {
   return (
     <>
     <ToastContainer/>
-    <div className={style.hero}>
-      <img src={contact} alt="" />
-    </div>
+    <HeroSection/>
       <section>
       <div className={`container ${style.contact}`}>
         <h2>Contact Us</h2>
