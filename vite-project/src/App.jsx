@@ -5,10 +5,12 @@ import Home from './Components/Screens/Home/Home'
 import Contact from "./Components/Screens/Contact/Contact";
 import { Route, Routes } from "react-router-dom";
 import About from "./Components/Screens/About/About";
+import Header from "./Components/Shared/header/Header";
 
 function App() {
   return (
     <>
+    <Header/>
      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
