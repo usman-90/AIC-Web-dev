@@ -65,3 +65,9 @@ background-image:
 .fs-4{
     font-size: 1.5rem !important;
 }
+.bg{
+    background-color: #daeaf0;
+}
+.pb-5{
+    padding-bottom: 8rem !important;
+}
