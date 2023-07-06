@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+.main{
+    width:100vw;
+    height:400px;
+    background-color: rgb(155, 197, 211);
+}
+.hero{
+    display: flex; 
+    align-items: center;
+    justify-content: space-around;
+}
+.heroPic{
+    height: 440px;
+    margin-top: 24px;
+}
+.hero h1{
+    font-family:"Dancing Script";
+    font-size: 74px;
+    color:black;
+}
+.hero p{
+    max-width: 400px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(33, 33, 33);
+    font-style:italic;
+}
+

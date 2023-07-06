@@ -7,8 +7,10 @@
   
   header {
     width: 100%;
-    background-color: var(--dark-blue);
+    background-color: transparent;
     color: #fff;
+    -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   
     .header {
       width: 100%;
