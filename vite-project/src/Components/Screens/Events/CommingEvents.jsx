@@ -36,9 +36,8 @@ const ComingEvents = () => {
                 onSlideChange={() => console.log('slide change')}
                 >
                   {data.map((e,i)=>{
-                    return<>
-                      <SwiperSlide key={i}><BlogBox img={e.imageURL} slug={e.id} title={e.name} desc={e.desc} date={e.date}/></SwiperSlide>
-                    </>
+                    return<SwiperSlide key={i}><BlogBox img={e.imageURL} slug={e.id} title={e.name} desc={e.desc} StartDate={e.startDate} EndDate={e.endDate}/></SwiperSlide>
+                    
                   })}
                 </Swiper>
             

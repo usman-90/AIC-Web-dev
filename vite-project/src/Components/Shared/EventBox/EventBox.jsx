@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import classes from "./EventBox.module.css";
 
-const BlogBox = ({ img, title,desc, slug, date, latest }) => {
+const BlogBox = ({ img, title,desc, slug, StartDate, EndDate}) => {
   return (
     <div>
-      <div className={!latest?classes.container:classes.container2}>
-        <img src={img} alt="Event Image" className={!latest?classes.BlogImage:classes.BlogImage2} />
+      <div className={classes.container}>
+        <img src={img} alt="Event Image" className={classes.BlogImage} />
         <div className={classes.textContainer}>
           <div>
             <h2 className={classes.title}>{title}</h2>
@@ -15,8 +15,14 @@ const BlogBox = ({ img, title,desc, slug, date, latest }) => {
           </div>
           <div className={classes.bottomPart}>
             <div className={classes.dateRead}>
-              <p className="typeDate"><strong>Dates : </strong></p>
-              <p>{date}</p>
+              <p className="typeDate"><strong>Start Date : </strong></p>
+              <p>{StartDate}</p>
+            </div>
+            </div>
+          <div className={classes.bottomPart}>
+            <div className={classes.dateRead}>
+              <p className="typeDate"><strong>End Date : </strong></p>
+              <p>{EndDate}</p>
             </div>
           </div>
         </div>

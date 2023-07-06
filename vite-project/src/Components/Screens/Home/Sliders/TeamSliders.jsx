@@ -9,6 +9,9 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import Wrapper from '../../../Shared/Wrapper/Wrapper';
 import Card from '../../../Shared/Card/card';
 import {TeamData} from '../../../../Data/data'
+import { NavLink, useNavigate } from 'react-router-dom'
+import Button from '../../../Shared/Button/Button'
+
 
 const TeamSlider = () => {
   
@@ -40,6 +43,7 @@ const TeamSlider = () => {
                     </>
                   })}
                 </Swiper>
+                <NavLink to="contact"><Button text="Join Us"/></NavLink>
                 </div>
 
         </Wrapper>

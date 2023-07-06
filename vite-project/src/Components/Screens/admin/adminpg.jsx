@@ -41,7 +41,7 @@ const AdminPage = () => {
     }
   };
   return (
-    <div>
+    <div className="mainWrapper">
       <ToastContainer />
       <div className="containerr adminpg">
         <div className="d-flex  flex-column align-items-center mainn w-100">
