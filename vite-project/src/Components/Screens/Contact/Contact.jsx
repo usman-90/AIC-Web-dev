@@ -124,7 +124,7 @@ const Contact = () => {
               <input
                 type="number"
                 name="subject"
-                placeholder="Subject"
+                placeholder="Amount"
                 required
               />
               <button type="submit" className="--btn --btn-primary">
