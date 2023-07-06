@@ -6,6 +6,7 @@ import Contact from "./Components/Screens/Contact/Contact";
 import { Route, Routes } from "react-router-dom";
 import About from "./Components/Screens/About/About";
 import Header from "./Components/Shared/header/Header";
+import Footer from "./Components/Shared/Footer/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      <Footer/>
     </>
   );
 }
