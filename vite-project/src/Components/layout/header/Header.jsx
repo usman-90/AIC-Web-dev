@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./header.scss";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaShoppingCart, FaTimes, FaUserCircle } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { useGlobalContext } from "../../../context/context";
+import { signOut } from "firebase/auth";
+import { auth } from "../../../firebase/config";
 
 
 const logo = (
@@ -21,6 +24,7 @@ const activeLink = ({ isActive }) =>
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const {isLoggedin,setIsLoggedin} = useGlobalContext()
 //   const [name, setName] = useState<string | null>("");
 
 
@@ -51,8 +55,23 @@ const Header = () => {
     setShowMenu(false);
   };
 
+  const logoutUser = () => {
+    signOut(auth)
+      .then(() => {
+        // toast.success("Logout Successful");
+        setIsLoggedin(false)
+        navigate("/");
+      })
+      .catch((error) => {
+        // toast.error(error.message);
+      });
+  };
+
   const navigate = useNavigate();
 
+  // useEffect(() => {
+
+  // },[isLoggedin])
 
   return (
     <>
@@ -94,28 +113,17 @@ const Header = () => {
                 </NavLink>
               </li>
             </ul>
-            {/* <div className="header-right" onClick={hideMenu}>
+            <div className="header-right" onClick={hideMenu}>
               <span className="links">
-                <ShowOnLogout>
-                  <NavLink to="/login" className={activeLink}>
-                    Login
-                  </NavLink>
-                </ShowOnLogout>
-                <ShowOnLogin>
-                  <a href="#" style={{ color: "#f7c17b" }}>
-                    <FaUserCircle size={16} />
-                    Hi, {userName}
-                  </a>
-                  <NavLink to="/order-history" className={activeLink}>
-                    My Orders
-                  </NavLink>
-                  <NavLink to="/a" onClick={logoutUser}>
+                {isLoggedin && <NavLink to="/a" onClick={logoutUser}>
                     Logout
-                  </NavLink>
-                </ShowOnLogin>
+                  </NavLink>}
+                {!isLoggedin && <NavLink to="/login" >
+                    Login as Admin
+                  </NavLink>}
               </span>
-              {cart}
-            </div> */}
+              
+            </div>
           </nav>
 
           <div className="menu-icon">
