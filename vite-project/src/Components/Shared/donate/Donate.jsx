@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import style from "./donate.module.scss";
 import cardImg from "../../../assets/images/card_img.png"
 import { CountryDropdown } from "react-country-region-selector";
+import { ToastContainer, toast } from "react-toastify";
 // import { useNavigate } from "react-router-dom";
 // import { useSelector } from "react-redux";
 // import { RootState } from "../../redux/store";
@@ -175,12 +176,14 @@ const Donate = () => {
 //   };
 
 const handleSubmit = () => {
-    alert("donated")
+    toast.success("Payment successful")
     setCard({...initialCardData})
 }
 
   return (
-    <div className="container">
+    <>
+    <ToastContainer/>
+      <div className="container">
       <h3>Payment Method</h3>
       <div className={style.options}>
         <input
@@ -293,6 +296,7 @@ const handleSubmit = () => {
         Checkout
       </button>
     </div>
+    </>
   );
 };
 
