@@ -1,17 +1,18 @@
 import './Home.css';
-import Wrapper from '../../Shared/Wrapper/Wrapper';
 import TeamSlider from './Sliders/TeamSliders';
 import SponsorSlider from './Sliders/SponsorSliders';
 import MainSlider from './Sliders/mainSlider';
+import HomeText from './HomeText/HomeText';
 
 const Home = () => {
   
   return (
-    <section>
+    <div>
                 <MainSlider/>
-                <TeamSlider/>/
+                <HomeText/>
+                <TeamSlider/>
                 <SponsorSlider/>
-    </section>
+    </div>
   );
 };
 

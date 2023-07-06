@@ -9,11 +9,11 @@ import { Navigation, Pagination, Scrollbar,Autoplay, A11y } from 'swiper/modules
 import {CaroselImages} from '../../../../Data/data'
 
 
-const TeamSlider = () => {
+const mainSlider = () => {
   
 
   return (
-    <section>
+    <div>
                 <Swiper
                 modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
                 slidesPerView={1}
@@ -32,14 +32,13 @@ const TeamSlider = () => {
                 onSlideChange={() => console.log('slide change')}
                 >
                   {CaroselImages.map((e,i)=>{
-                    return<>
-                    <SwiperSlide><img src={e} alt="pic" className="SliderPic"/></SwiperSlide>
+                    return< >
+                    <SwiperSlide key={i}><img src={e} alt="pic" className="SliderPic"/></SwiperSlide>
                     </>
                   })}
                 </Swiper>
-
-    </section>
+        </div>
   );
 };
 
-export default TeamSlider;
+export default mainSlider;

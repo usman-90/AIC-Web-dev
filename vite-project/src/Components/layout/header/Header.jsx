@@ -42,6 +42,14 @@ const Header = () => {
 //     });
 //   }, [name]);
 
+function changeColor() {
+  if (window.scrollY >= 90) {
+    document.getElementById("header").style.backgroundColor="black";
+  } else {
+    document.getElementById("header").style.backgroundColor="transparent";
+  }
+}
+window.addEventListener("scroll", changeColor);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -56,7 +64,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed" >
+      <header id="header" className="fixed" >
         <div className="header">
           {logo}
           <nav className={showMenu ? "show-nav" : "hide-nav"}>
@@ -86,6 +94,11 @@ const Header = () => {
               <li>
                 <NavLink to="about" className={activeLink}>
                   About Us
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="events" className={activeLink}>
+                  Our Events
                 </NavLink>
               </li>
               <li>

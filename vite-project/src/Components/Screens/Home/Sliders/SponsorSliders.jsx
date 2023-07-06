@@ -14,7 +14,6 @@ const SponsorSlider= () => {
   
 
   return (
-    <section>
         <Wrapper>
                 <div className="mainContainer">
                     <div className="Heading">
@@ -37,14 +36,13 @@ const SponsorSlider= () => {
                 >
                   {TeamData.map((e,i)=>{
                     return<>
-                    <SwiperSlide><Card key={i} src={e.img} role={e.role} name={e.name} desc={e.desc} /></SwiperSlide>
+                    <SwiperSlide key={i}><Card src={e.img} role={e.role} name={e.name} desc={e.desc} /></SwiperSlide>
                     </>
                   })}
                 </Swiper>
                 </div>
 
         </Wrapper>
-    </section>
   );
 };
 
