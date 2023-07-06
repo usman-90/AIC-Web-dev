@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./auth.module.scss";
-// import forgotImg from "../../assets/forgot.png";
+import forgotImg from "../../../assets/images/reset.jpg";
 import { Link } from "react-router-dom";
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
@@ -39,7 +39,7 @@ const Reset = () => {
       )}
       <section className={`container ${style.auth}`}>
         <div className={style.img}>
-          {/* <img src={forgotImg} alt="Reset" style={{ width: "400px" }} /> */}
+          <img src={forgotImg} alt="Reset" style={{ width: "400px" }} />
         </div>
         <div className={style.form}>
           <h2>Reset Password</h2>

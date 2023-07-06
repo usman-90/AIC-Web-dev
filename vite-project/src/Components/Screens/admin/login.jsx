@@ -1,7 +1,7 @@
 import { useState } from "react";
 import style from "./auth.module.scss";
 import { Link, useNavigate } from "react-router-dom";
-// import loginImg from "../../assets/login.png";
+import loginImg from "../../../assets/images/login.jpg";
 import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
@@ -47,9 +47,9 @@ const Login = () => {
         </div>
       )}
       <section className={`container ${style.auth}`}>
-        {/* <div className={style.img}>
+        <div className={style.img}>
           <img src={loginImg} alt="Login" style={{ width: "400px" }} />
-        </div> */}
+        </div>
         <div className={style.form}>
           <h2>Admin Login</h2>
           <form onSubmit={loginUser}>
