@@ -2,7 +2,8 @@ import { useState } from "react";
 import "./adminpg.css";
 import { db, storage } from "../../../firebase/config";
 import { Timestamp, addDoc, collection, doc, setDoc } from "firebase/firestore";
-// import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const initialState = {
   name :"",
@@ -31,14 +32,15 @@ const AdminPage = () => {
         type: event.type,
       });
       setEvent(initialState);
-      // toast.success("Product uploaded successfully.");
+      toast.success("Event added successfully.");
     } catch (error) {
       // setIsLoading(false);
-      // toast.error(error.message);
+      toast.error(error.message);
     }
   };
   return (
     <div>
+      <ToastContainer/>
       <div className="containerr adminpg">
         <div className="d-flex  flex-column align-items-center main w-100">
           <h1 className="text-center mt-3 mb-5 b-bottom h-color">Admin Page</h1>
