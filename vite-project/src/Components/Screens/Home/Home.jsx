@@ -1,4 +1,3 @@
-import React from 'react';
 import './Home.css';
 import Wrapper from '../../Shared/Wrapper/Wrapper';
 import TeamSlider from './Sliders/TeamSliders';
