@@ -8,7 +8,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../../../firebase/config";
-import spinnerImg from "../../../assets/images/spinner.jpg"
+import spinnerImg from "../../../assets/images/spinner.jpg";
 import { useGlobalContext } from "../../../context/context";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,11 +17,9 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const {setIsLoggedin} = useGlobalContext()
+  const { setIsLoggedin } = useGlobalContext();
 
   const navigate = useNavigate();
-
-
 
   const loginUser = (e) => {
     e.preventDefault();
@@ -30,9 +28,9 @@ const Login = () => {
       .then((userCredentials) => {
         setLoading(false);
         toast.success("Login Successful");
-        setEmail("")
-        setPassword("")
-        setIsLoggedin(true)
+        setEmail("");
+        setPassword("");
+        setIsLoggedin(true);
         navigate("/");
       })
       .catch((error) => {
@@ -46,9 +44,7 @@ const Login = () => {
       <ToastContainer />
       {loading && (
         <div className="loading-container">
-           <img
-              src={spinnerImg}
-            />
+          <img src={spinnerImg} />
         </div>
       )}
       <section className={`container ${style.auth}`}>
