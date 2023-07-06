@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import Wrapper from '../../../Shared/Wrapper/Wrapper';
-import Card from '../../../Shared/Wrapper/card';
+import Card from '../../../Shared/Card/card';
 import {TeamData} from '../../../../Data/data'
 
 const TeamSlider = () => {
