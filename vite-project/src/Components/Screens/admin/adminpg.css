@@ -1,0 +1,36 @@
+.main{
+    margin-top: 10rem;
+}
+input[type="text"],
+input[type="number"],
+input[type="file"],
+input[type="date"],
+select,
+textarea,
+input[type="password"] {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 300;
+  padding: 1rem;
+  margin: 1rem auto;
+  width: 100%;
+  border: 1px solid #777;
+  border-radius: 3px;
+  outline: none;
+}
+.myform{
+    width: 44rem;
+}
+input[name="desc"]{
+    width: 20rem;
+}
+@media only screen and (max-width: 600px) {
+ .myform{
+    width: 34rem;
+ }
+  }
+
+.h-color{
+    color: var(--color-danger);
+
+}
