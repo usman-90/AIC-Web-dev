@@ -1,4 +1,4 @@
-import Card from "../../Shared/Wrapper/card";
+import Card from "../../Shared/Card/card";
 import "./about.css";
 import Product from "./product";
 import History from "./history";
