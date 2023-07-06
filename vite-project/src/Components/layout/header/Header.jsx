@@ -50,7 +50,7 @@ const Header = () => {
 
 function changeColor() {
   if (window.scrollY >= 90) {
-    document.getElementById("header").style.backgroundColor="black";
+    document.getElementById("header").style.backgroundColor="#274d5a";
   } else {
     document.getElementById("header").style.backgroundColor="transparent";
   }
