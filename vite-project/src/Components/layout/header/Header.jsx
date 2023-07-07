@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./header.scss";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import { FaShoppingCart, FaTimes, FaUserCircle } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { useGlobalContext } from "../../../context/context";
 import { signOut } from "firebase/auth";
@@ -26,39 +26,8 @@ const activeLink = ({ isActive }) => (isActive ? "active" : "");
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-<<<<<<< HEAD
-  const {isLoggedin} = useGlobalContext()
-=======
-<<<<<<< HEAD
-  const { isLoggedin, setIsLoggedin } = useGlobalContext();
-  //   const [name, setName] = useState<string | null>("");
-
-  //   //Monitor currently signed in user
-  //   useEffect(() => {
-  //     onAuthStateChanged(auth, (user) => {
-  //       if (user) {
-  //         if (user.displayName) {
-  //           setName(user.displayName!.split(" ")[0]);
-  //         }
-  //         dispatch(
-  //           setUser({ email: user.email, userName: name, userId: user.uid })
-  //         );
-  //       } else {
-  //         setName("");
-  //         dispatch(removeUser());
-  //       }
-  //     });
-  //   }, [name]);
-
-  function changeColor() {
-    if (window.scrollY >= 90) {
-      document.getElementById("header").style.backgroundColor = "black";
-    } else {
-      document.getElementById("header").style.backgroundColor = "transparent";
-    }
-=======
   const {isLoggedin,setIsLoggedin} = useGlobalContext()
->>>>>>> cc8fadedfcc53927555c22009a5c3600ad6051cb
+  const navigate = useNavigate();
 
   const location = useLocation()
   const currentRoute = location.pathname
@@ -87,8 +56,7 @@ function changeColor() {
     document.getElementById("header").style.backgroundColor="#274d5a";
   } else {
     document.getElementById("header").style.backgroundColor="transparent";
->>>>>>> 5e5e31d28752c18b8437e01da15c2bc9811a9f79
-  }
+  }}
   window.addEventListener("scroll", changeColor);
 
   const toggleMenu = () => {
@@ -103,10 +71,7 @@ function changeColor() {
     signOut(auth)
       .then(() => {
         toast.success("Logout Successful");
-<<<<<<< HEAD
-=======
         setIsLoggedin(false);
->>>>>>> cc8fadedfcc53927555c22009a5c3600ad6051cb
         navigate("/");
       })
       .catch((error) => {
@@ -114,7 +79,7 @@ function changeColor() {
       });
   };
 
-  const navigate = useNavigate();
+  
 
 
   return (
