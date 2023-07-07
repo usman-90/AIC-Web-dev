@@ -33,11 +33,12 @@ const Header = () => {
   const location = useLocation()
   const currentRoute = location.pathname
   const getCurrentRoute = () => {
-    if(currentRoute === '/login' || currentRoute === '/reset' || currentRoute === '/admin'){
+    if(currentRoute === '/' || currentRoute === '/about' || currentRoute === '/events' || currentRoute === '/contact'){
       return true
     }
     else return false
   }
+  console.log(currentRoute)
 
   useEffect(() => {
     getCurrentRoute()
@@ -47,6 +48,9 @@ const Header = () => {
 
 function changeColor() {
   if(window.scrollY <= 90 && getCurrentRoute()){
+    document.getElementById("header").style.backgroundColor="transparent";
+  }
+  else if(window.scrollY <= 90){
     document.getElementById("header").style.backgroundColor="#274d5a";
   }
   else if (window.scrollY >= 90) {
