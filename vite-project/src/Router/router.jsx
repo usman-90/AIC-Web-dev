@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 import React from "react";
-=======
->>>>>>> 5e5e31d28752c18b8437e01da15c2bc9811a9f79
 import { Route, Routes } from "react-router-dom";
 import Home from "../Components/Screens/Home/Home";
 import Contact from "../Components/Screens/Contact/Contact";
@@ -10,12 +7,8 @@ import Events from '../Components/Screens/Events/Events';
 import Login from "../Components/Screens/admin/Login";
 import Reset from "../Components/Screens/admin/Reset";
 import AdminPage from "../Components/Screens/admin/adminpg";
-<<<<<<< HEAD
-=======
-import Events from "../Components/Screens/Events/Events"
 import NotFound from "../Components/Screens/pageNotFound/NotFound";
 
->>>>>>> 5e5e31d28752c18b8437e01da15c2bc9811a9f79
 
 
 
