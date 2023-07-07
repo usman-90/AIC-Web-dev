@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./header.scss";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaShoppingCart, FaTimes, FaUserCircle } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { useGlobalContext } from "../../../context/context";
@@ -8,6 +8,8 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../../firebase/config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+
 
 
 const logo = (
@@ -27,29 +29,27 @@ const activeLink = ({ isActive }) =>
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const {isLoggedin,setIsLoggedin} = useGlobalContext()
-//   const [name, setName] = useState<string | null>("");
 
+  const location = useLocation()
+  const currentRoute = location.pathname
+  const getCurrentRoute = () => {
+    if(currentRoute === '/login' || currentRoute === '/reset' || currentRoute === '/admin'){
+      return true
+    }
+    else return false
+  }
 
+  useEffect(() => {
+    getCurrentRoute()
+    changeColor()
+  },[currentRoute])
 
-//   //Monitor currently signed in user
-//   useEffect(() => {
-//     onAuthStateChanged(auth, (user) => {
-//       if (user) {
-//         if (user.displayName) {
-//           setName(user.displayName!.split(" ")[0]);
-//         }
-//         dispatch(
-//           setUser({ email: user.email, userName: name, userId: user.uid })
-//         );
-//       } else {
-//         setName("");
-//         dispatch(removeUser());
-//       }
-//     });
-//   }, [name]);
 
 function changeColor() {
-  if (window.scrollY >= 90) {
+  if(window.scrollY <= 90 && getCurrentRoute()){
+    document.getElementById("header").style.backgroundColor="#274d5a";
+  }
+  else if (window.scrollY >= 90) {
     document.getElementById("header").style.backgroundColor="#274d5a";
   } else {
     document.getElementById("header").style.backgroundColor="transparent";

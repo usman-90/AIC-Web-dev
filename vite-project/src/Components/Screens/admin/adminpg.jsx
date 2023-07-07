@@ -47,8 +47,9 @@ const AdminPage = () => {
   };
 
   return (
-    <div className="mainWrapper">
-      <ToastContainer />
+    <>
+    <ToastContainer/>
+      <div className="mainWrapper">
       {loading && (
         <div className="loading-container">
            <img
@@ -133,6 +134,7 @@ const AdminPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
