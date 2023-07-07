@@ -1,23 +1,15 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "../Components/Screens/Home/Home";
 import Contact from "../Components/Screens/Contact/Contact";
 import About from "../Components/Screens/About/About";
-import Events from '../Components/Screens/Events/Events';
-import Login from "../Components/Screens/admin/Login";
+import Events from "../Components/Screens/Events/Events";
+import Login from "../Components/Screens/admin/login";
 import Reset from "../Components/Screens/admin/Reset";
 import AdminPage from "../Components/Screens/admin/adminpg";
 import NotFound from "../Components/Screens/pageNotFound/NotFound";
 
-
-
-
 const Router = () => {
-
-
-
-
-  return (  
+  return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/admin" element={<AdminPage />} />
