@@ -25,13 +25,26 @@ const PastEvents = () => {
         <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={60}
-                slidesPerView={3}
+                slidesPerView={1}
                 grabCursor={true}
                 navigation
+                breakpoints={{
+                  640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                  },
+                }}
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
                 >
                   {data.map((e,i)=>{
                     return<SwiperSlide key={i}><BlogBox img={e.imageURL} slug={e.id} title={e.name} desc={e.desc} date={e.date}/></SwiperSlide>                                        

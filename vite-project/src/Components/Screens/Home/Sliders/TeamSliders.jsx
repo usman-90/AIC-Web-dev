@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './Slider.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -9,15 +9,14 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import Wrapper from '../../../Shared/Wrapper/Wrapper';
 import Card from '../../../Shared/Card/card';
 import {TeamData} from '../../../../Data/data'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, } from 'react-router-dom'
 import Button from '../../../Shared/Button/Button'
 
 
 const TeamSlider = () => {
-  
+  return(
 
-  return (
-        <Wrapper>
+    <Wrapper>
                 <div className="mainContainer">
                     <div className="Heading">
                             <h1>Our Team</h1>
@@ -26,11 +25,26 @@ const TeamSlider = () => {
                 <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={60}
-                slidesPerView={3}
+                slidesPerView={1}
                 grabCursor={true}
                 centeredSlides={true}
                 cssMode={true}
                 navigation
+                breakpoints={{
+                  640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                  },
+                }}
+               
                 loop={true}
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
@@ -47,7 +61,7 @@ const TeamSlider = () => {
                 </div>
 
         </Wrapper>
-  );
+)
 };
 
 export default TeamSlider;

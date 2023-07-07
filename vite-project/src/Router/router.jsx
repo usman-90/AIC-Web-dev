@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import React from "react";
-=======
 
->>>>>>> 7ce17cf6df6f5b24fe26c1712d05bc81459b7add
 import { Route, Routes } from "react-router-dom";
 import Home from "../Components/Screens/Home/Home";
 import Contact from "../Components/Screens/Contact/Contact";
