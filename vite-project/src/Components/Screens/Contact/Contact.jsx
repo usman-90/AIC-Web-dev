@@ -3,7 +3,7 @@ import { FaEnvelope, FaPhoneAlt, FaTwitter } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 import { useRef } from "react";
 // import emailjs from "@emailjs/browser";
-import { Cardz } from "../../Shared/cardz/Cardz";
+import { Cardz } from "../../Shared/cardz/cardz";
 import Donate from "../../Shared/donate/Donate";
 import { ToastContainer, toast } from "react-toastify";
 import HeroSection from "./HeroSection";
