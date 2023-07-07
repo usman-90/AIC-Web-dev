@@ -35,6 +35,7 @@ const ComingEvents = () => {
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
                 >
+<<<<<<< HEAD
                   {data.length === 0 ? 
                   isLoading && (
                     <div className="loading-container">
@@ -49,6 +50,12 @@ const ComingEvents = () => {
                     </>
                   })
                 }
+=======
+                  {data.map((e,i)=>{
+                    return<SwiperSlide key={i}><BlogBox img={e.imageURL} slug={e.id} title={e.name} desc={e.desc} StartDate={e.startDate} EndDate={e.endDate}/></SwiperSlide>
+                    
+                  })}
+>>>>>>> 34e8d378c3185fb0e1801a3cd4cc8cb26b48fc1e
                 </Swiper>
             
         </div>

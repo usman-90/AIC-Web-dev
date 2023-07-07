@@ -47,7 +47,7 @@ const AdminPage = () => {
   };
 
   return (
-    <div>
+    <div className="mainWrapper">
       <ToastContainer />
       {loading && (
         <div className="loading-container">
