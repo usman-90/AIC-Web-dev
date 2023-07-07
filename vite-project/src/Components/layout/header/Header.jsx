@@ -26,34 +26,6 @@ const activeLink = ({ isActive }) => (isActive ? "active" : "");
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-<<<<<<< HEAD
-  const { isLoggedin, setIsLoggedin } = useGlobalContext();
-  //   const [name, setName] = useState<string | null>("");
-
-  //   //Monitor currently signed in user
-  //   useEffect(() => {
-  //     onAuthStateChanged(auth, (user) => {
-  //       if (user) {
-  //         if (user.displayName) {
-  //           setName(user.displayName!.split(" ")[0]);
-  //         }
-  //         dispatch(
-  //           setUser({ email: user.email, userName: name, userId: user.uid })
-  //         );
-  //       } else {
-  //         setName("");
-  //         dispatch(removeUser());
-  //       }
-  //     });
-  //   }, [name]);
-
-  function changeColor() {
-    if (window.scrollY >= 90) {
-      document.getElementById("header").style.backgroundColor = "black";
-    } else {
-      document.getElementById("header").style.backgroundColor = "transparent";
-    }
-=======
   const {isLoggedin,setIsLoggedin} = useGlobalContext()
 
   const location = useLocation()
@@ -83,7 +55,6 @@ function changeColor() {
     document.getElementById("header").style.backgroundColor="#274d5a";
   } else {
     document.getElementById("header").style.backgroundColor="transparent";
->>>>>>> 5e5e31d28752c18b8437e01da15c2bc9811a9f79
   }
   window.addEventListener("scroll", changeColor);
 
@@ -179,6 +150,6 @@ function changeColor() {
       </header>
     </>
   );
-};
-
+}
+}
 export default Header;
