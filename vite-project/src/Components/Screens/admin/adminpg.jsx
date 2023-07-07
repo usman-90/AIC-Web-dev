@@ -36,8 +36,8 @@ const AdminPage = () => {
         endDate: event.endDate,
         type: event.type,
       });
-      setLoading(false);
       setEvent(initialState);
+      setLoading(false);
       toast.success("Event added successfully.");
     } catch (error) {
       setLoading(false);
@@ -95,7 +95,7 @@ const AdminPage = () => {
                 <h4>Start Date</h4>
                 <input
                   type="date"
-                  value={event.date}
+                  value={event.startDate}
                   name="startDate"
                   onChange={(e) => handelInputChange(e)}
                 />
@@ -104,7 +104,7 @@ const AdminPage = () => {
                 <h4>End Date</h4>
                 <input
                   type="date"
-                  value={event.date}
+                  value={event.endDate}
                   name="endDate"
                   onChange={(e) => handelInputChange(e)}
                 />
