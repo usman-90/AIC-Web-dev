@@ -9,7 +9,6 @@ import {
 } from "firebase/auth";
 import { auth } from "../../../firebase/config";
 import spinnerImg from "../../../assets/images/spinner.jpg"
-import { useGlobalContext } from "../../../context/context";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -17,7 +16,6 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const {setIsLoggedin} = useGlobalContext()
 
   const navigate = useNavigate();
 
@@ -32,7 +30,6 @@ const Login = () => {
         toast.success("Login Successful");
         setEmail("")
         setPassword("")
-        setIsLoggedin(true)
         navigate("/");
       })
       .catch((error) => {

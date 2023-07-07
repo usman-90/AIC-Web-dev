@@ -28,7 +28,7 @@ const activeLink = ({ isActive }) =>
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const {isLoggedin,setIsLoggedin} = useGlobalContext()
+  const {isLoggedin} = useGlobalContext()
 
   const location = useLocation()
   const currentRoute = location.pathname
@@ -38,7 +38,7 @@ const Header = () => {
     }
     else return false
   }
-  console.log(currentRoute)
+
 
   useEffect(() => {
     getCurrentRoute()
@@ -73,7 +73,6 @@ window.addEventListener("scroll", changeColor);
     signOut(auth)
       .then(() => {
         toast.success("Logout Successful");
-        setIsLoggedin(false)
         navigate("/");
       })
       .catch((error) => {
@@ -83,9 +82,6 @@ window.addEventListener("scroll", changeColor);
 
   const navigate = useNavigate();
 
-  // useEffect(() => {
-
-  // },[isLoggedin])
 
   return (
     <>
