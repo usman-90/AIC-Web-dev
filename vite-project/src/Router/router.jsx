@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 import React from "react";
 import { Route, Routes } from "react-router-dom";
->>>>>>> 3d16c7ade118255004b3cbec9f74bdf97b3ba1d8
 import Home from "../Components/Screens/Home/Home";
 import Contact from "../Components/Screens/Contact/Contact";
 import About from "../Components/Screens/About/About";
