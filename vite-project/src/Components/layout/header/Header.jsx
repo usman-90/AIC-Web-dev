@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./header.scss";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import { FaShoppingCart, FaTimes, FaUserCircle } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { useGlobalContext } from "../../../context/context";
 import { signOut } from "firebase/auth";
@@ -27,6 +27,7 @@ const activeLink = ({ isActive }) => (isActive ? "active" : "");
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const {isLoggedin,setIsLoggedin} = useGlobalContext()
+  const navigate = useNavigate();
 
   const location = useLocation()
   const currentRoute = location.pathname
@@ -36,7 +37,7 @@ const Header = () => {
     }
     else return false
   }
-  console.log(currentRoute)
+
 
   useEffect(() => {
     getCurrentRoute()
@@ -55,7 +56,7 @@ function changeColor() {
     document.getElementById("header").style.backgroundColor="#274d5a";
   } else {
     document.getElementById("header").style.backgroundColor="transparent";
-  }
+  }}
   window.addEventListener("scroll", changeColor);
 
   const toggleMenu = () => {
@@ -78,11 +79,8 @@ function changeColor() {
       });
   };
 
-  const navigate = useNavigate();
+  
 
-  // useEffect(() => {
-
-  // },[isLoggedin])
 
   return (
     <>
@@ -151,5 +149,5 @@ function changeColor() {
     </>
   );
 }
-}
+
 export default Header;
