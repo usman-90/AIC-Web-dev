@@ -7,7 +7,7 @@ import style from "./contact.module.scss";
 
 const HeroSection = () => {
   return (
-    <div className='main'>
+    <div className={`main ${style.imgCon}`}>
     <Wrapper>
         <div className="hero">
             <div>

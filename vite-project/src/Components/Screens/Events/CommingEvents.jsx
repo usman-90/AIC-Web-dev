@@ -4,11 +4,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import React from 'react'
 import './OngoingEvents.css'
 import Wrapper from '../../Shared/Wrapper/Wrapper'
 import BlogBox from '../../Shared/EventBox/EventBox'
 import useFetchCollection from '../../Shared/FetchCollection';
+import spinnerImg from '../../../assets/images/spinner.jpg'
 
 
 const ComingEvents = () => {
@@ -49,10 +49,20 @@ const ComingEvents = () => {
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
                 >
-                  {data.map((e,i)=>{
-                    return<SwiperSlide key={i}><BlogBox img={e.imageURL} slug={e.id} title={e.name} desc={e.desc} StartDate={e.startDate} EndDate={e.endDate}/></SwiperSlide>
-                    
-                  })}
+                  {data.length === 0 ? 
+                  isLoading && (
+                    <div className="loading-container">
+                       <img
+                          src={spinnerImg}
+                        />
+                    </div>
+                  ) :
+                  data.map((e,i)=>{
+                    return<>
+                    <SwiperSlide key={i}><BlogBox img={e.imageURL} slug={e.id} title={e.name} desc={e.desc} startDate={e.startDate} endDate={e.endDate}/></SwiperSlide>                                        
+                    </>
+                  })
+                }
                 </Swiper>
             
         </div>

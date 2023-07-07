@@ -57,7 +57,7 @@ const TeamSlider = () => {
                     </>
                   })}
                 </Swiper>
-                <NavLink to="contact"><Button text="Join Us"/></NavLink>
+                <NavLink to="/contact"><Button text="Join Us"/></NavLink>
                 </div>
 
         </Wrapper>

@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import "./header.scss";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { FaShoppingCart, FaTimes, FaUserCircle } from "react-icons/fa";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { FaTimes } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { useGlobalContext } from "../../../context/context";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../firebase/config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+
 
 
 const logo = (
@@ -20,42 +22,42 @@ const logo = (
   </div>
 );
 
-const activeLink = ({ isActive }) =>
-  isActive ? "active" : "";
-
+const activeLink = ({ isActive }) => (isActive ? "active" : "");
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const {isLoggedin,setIsLoggedin} = useGlobalContext()
-//   const [name, setName] = useState<string | null>("");
+  const navigate = useNavigate();
+
+  const location = useLocation()
+  const currentRoute = location.pathname
+  const getCurrentRoute = () => {
+    if(currentRoute === '/' || currentRoute === '/about' || currentRoute === '/events' || currentRoute === '/contact'){
+      return true
+    }
+    else return false
+  }
 
 
+  useEffect(() => {
+    getCurrentRoute()
+    changeColor()
+  },[currentRoute])
 
-//   //Monitor currently signed in user
-//   useEffect(() => {
-//     onAuthStateChanged(auth, (user) => {
-//       if (user) {
-//         if (user.displayName) {
-//           setName(user.displayName!.split(" ")[0]);
-//         }
-//         dispatch(
-//           setUser({ email: user.email, userName: name, userId: user.uid })
-//         );
-//       } else {
-//         setName("");
-//         dispatch(removeUser());
-//       }
-//     });
-//   }, [name]);
 
 function changeColor() {
-  if (window.scrollY >= 90) {
+  if(window.scrollY <= 90 && getCurrentRoute()){
+    document.getElementById("header").style.backgroundColor="transparent";
+  }
+  else if(window.scrollY <= 90){
+    document.getElementById("header").style.backgroundColor="#274d5a";
+  }
+  else if (window.scrollY >= 90) {
     document.getElementById("header").style.backgroundColor="#274d5a";
   } else {
     document.getElementById("header").style.backgroundColor="transparent";
-  }
-}
-window.addEventListener("scroll", changeColor);
+  }}
+  window.addEventListener("scroll", changeColor);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -69,7 +71,7 @@ window.addEventListener("scroll", changeColor);
     signOut(auth)
       .then(() => {
         toast.success("Logout Successful");
-        setIsLoggedin(false)
+        setIsLoggedin(false);
         navigate("/");
       })
       .catch((error) => {
@@ -77,16 +79,13 @@ window.addEventListener("scroll", changeColor);
       });
   };
 
-  const navigate = useNavigate();
+  
 
-  // useEffect(() => {
-
-  // },[isLoggedin])
 
   return (
     <>
-    <ToastContainer/>
-      <header id="header" className="fixed" >
+      <ToastContainer />
+      <header id="header" className="fixed">
         <div className="header">
           {logo}
           <nav className={showMenu ? "show-nav" : "hide-nav"}>
@@ -131,17 +130,14 @@ window.addEventListener("scroll", changeColor);
             </ul>
             <div className="header-right" onClick={hideMenu}>
               <span className="links">
-                {isLoggedin && <NavLink to="/a" onClick={logoutUser}>
+                {isLoggedin && (
+                  <NavLink to="/a" onClick={logoutUser}>
                     Logout
-                  </NavLink>}
-                {!isLoggedin && <NavLink to="/login" >
-                    Login as Admin
-                  </NavLink>}
-                {isLoggedin && <NavLink to="/admin" >
-                    Admin Panel
-                  </NavLink>}
+                  </NavLink>
+                )}
+                {!isLoggedin && <NavLink to="/login">Login as Admin</NavLink>}
+                {isLoggedin && <NavLink to="/admin">Admin Panel</NavLink>}
               </span>
-              
             </div>
           </nav>
 
@@ -152,6 +148,6 @@ window.addEventListener("scroll", changeColor);
       </header>
     </>
   );
-};
+}
 
 export default Header;

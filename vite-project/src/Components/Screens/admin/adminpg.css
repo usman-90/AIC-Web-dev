@@ -1,8 +1,10 @@
 .mainWrapper{
-    background-color: black;
+    background-color: white;
     position: absolute;
-    z-index: -1;
-    width:100vw
+    width:98vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .mainn{
     margin-top: 10rem;
@@ -41,5 +43,5 @@ input[name="desc"]{
 
 }
 .Event h4,label{
-    color:white
+    color:black
 }

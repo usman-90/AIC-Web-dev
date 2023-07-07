@@ -8,7 +8,7 @@ import HomeText from './HomeText/HomeText';
 
 const Home = () => {
   return (
-    <div>
+    <div className='home-container'>
                 <MainSlider/>
                 <HomeText/>
                 <TeamSlider/>

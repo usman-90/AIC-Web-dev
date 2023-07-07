@@ -1,7 +1,6 @@
-import React, { useState } from "react";
 import classes from "./EventBox.module.css";
 
-const BlogBox = ({ img, title,desc, slug, StartDate, EndDate}) => {
+const BlogBox = ({ img, title,desc, slug, startDate,endDate, latest }) => {
   return (
     <div>
       <div className={classes.container}>
@@ -15,14 +14,8 @@ const BlogBox = ({ img, title,desc, slug, StartDate, EndDate}) => {
           </div>
           <div className={classes.bottomPart}>
             <div className={classes.dateRead}>
-              <p className="typeDate"><strong>Start Date : </strong></p>
-              <p>{StartDate}</p>
-            </div>
-            </div>
-          <div className={classes.bottomPart}>
-            <div className={classes.dateRead}>
-              <p className="typeDate"><strong>End Date : </strong></p>
-              <p>{EndDate}</p>
+              <p className="typeDate"><strong>Dates : </strong></p>
+              <p><strong>{startDate}</strong> --- <strong>{endDate}</strong></p>
             </div>
           </div>
         </div>
