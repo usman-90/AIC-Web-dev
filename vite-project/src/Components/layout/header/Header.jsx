@@ -14,7 +14,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 const logo = (
   <div className="logo">
-    <Link to="/">
+    <Link className="d-flex just  align-items-center" to="/">
+      <img className="mx-4" style={{width:"15%",height:"15%"}} src="https://lh4.googleusercontent.com/iLtDrb4MRKJhcm0f8SOtNBtpPspm_lEnFpGQpKLIbqa2iEHmj7_nb2_c8do_G23V1K6vXlEH2MuNODE=w2526-h1218" alt="" />
       <h2>
         R<span>CAI</span>.
       </h2>

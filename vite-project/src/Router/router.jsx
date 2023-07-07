@@ -1,8 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
-
-=======
->>>>>>> c8e7d83bf4ae8fbe81f88af4e3644ee6674216d0
 import { Route, Routes } from "react-router-dom";
 import Home from "../Components/Screens/Home/Home";
 import Contact from "../Components/Screens/Contact/Contact";
