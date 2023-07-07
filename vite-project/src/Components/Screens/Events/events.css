@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 .main{
-    width:100vw;
+    max-width:100vw;
     height:400px;
     background-color: rgb(155, 197, 211);
 }
