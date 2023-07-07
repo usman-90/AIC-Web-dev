@@ -4,8 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import loginImg from "../../../assets/images/login.jpg";
 import {
   signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../../../firebase/config";
 import spinnerImg from "../../../assets/images/spinner.jpg"
@@ -18,8 +16,6 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
-
-
 
   const loginUser = (e) => {
     e.preventDefault();
@@ -43,9 +39,7 @@ const Login = () => {
       <ToastContainer />
       {loading && (
         <div className="loading-container">
-           <img
-              src={spinnerImg}
-            />
+          <img src={spinnerImg} />
         </div>
       )}
       <section className={`container ${style.auth}`}>
