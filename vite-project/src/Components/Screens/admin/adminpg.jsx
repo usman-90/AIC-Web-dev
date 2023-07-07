@@ -4,6 +4,7 @@ import { db, storage } from "../../../firebase/config";
 import { Timestamp, addDoc, collection, doc, setDoc } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import spinnerImg from '../../../assets/images/spinner.jpg'
 
 const initialState = {
   name: "",
@@ -16,6 +17,8 @@ const initialState = {
 
 const AdminPage = () => {
   const [event, setEvent] = useState({ ...initialState });
+  const [loading, setLoading] = useState(false);
+
 
   const handelInputChange = (e) => {
     const { name, value } = e.target;
@@ -23,6 +26,7 @@ const AdminPage = () => {
   };
 
   const handleSubmit = (e) => {
+    setLoading(true)
     e.preventDefault();
     try {
       const docRef = addDoc(collection(db, "events"), {
@@ -33,16 +37,26 @@ const AdminPage = () => {
         endDate: event.endDate,
         type: event.type,
       });
+      setLoading(false)
       setEvent(initialState);
       toast.success("Event added successfully.");
     } catch (error) {
-      // setIsLoading(false);
+      setLoading(false);
       toast.error(error.message);
     }
   };
+
   return (
-    <div>
-      <ToastContainer />
+    <>
+    <ToastContainer/>
+      <div className="mainWrapper">
+      {loading && (
+        <div className="loading-container">
+           <img
+              src={spinnerImg}
+            />
+        </div>
+      )}
       <div className="containerr adminpg">
         <div className="d-flex  flex-column align-items-center mainn w-100">
           <h1 className="text-center mt-3 mb-5 b-bottom h-color">Admin Page</h1>
@@ -120,6 +134,7 @@ const AdminPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,3 +1,11 @@
+.mainWrapper{
+    background-color: white;
+    position: absolute;
+    width:98vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .mainn{
     margin-top: 10rem;
 }
@@ -33,4 +41,7 @@ input[name="desc"]{
 .h-color{
     color: var(--color-danger);
 
+}
+.Event h4,label{
+    color:white
 }

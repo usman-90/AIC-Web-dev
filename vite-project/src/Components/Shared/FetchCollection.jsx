@@ -17,9 +17,11 @@ const useFetchCollection = (collectionName  ) => {
           console.log(doc.id, " => ", doc.data());
           data.push({ id: doc.id, ...doc.data() });
         });
-        setData(data); // Assuming you have a 'setData' function to update the state with the fetched data
+        setData(data);
+        setIsLoading(false); // Assuming you have a 'setData' function to update the state with the fetched data
       } catch (error) {
         console.error("Error:", error);
+        setIsLoading(false);
       }
   };
 

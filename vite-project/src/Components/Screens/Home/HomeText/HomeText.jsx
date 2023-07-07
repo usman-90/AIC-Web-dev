@@ -18,7 +18,9 @@ const HomeText = () => {
         <p>
         The team has worked on variety of IoT related projects which includes smart irrigation, food quality inspection, smart home concept, automatic secure entrance system, smart health care system. The lab has also worked on other projects related to different technologies like satellite communication, speech processing, and image processing.
         </p>
-        <NavLink to="about"><Button text="Learn More" onClick={()=>{navigate("/about")}}/></NavLink>
+        <NavLink to="about"><button className="--btn --btn-primary">
+          Learn More
+        </button></NavLink>
     </div>
     </Wrapper>
   )

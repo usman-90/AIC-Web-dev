@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./header.scss";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaShoppingCart, FaTimes, FaUserCircle } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { useGlobalContext } from "../../../context/context";
@@ -8,6 +8,9 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../../firebase/config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+
+
 
 const logo = (
   <div className="logo">
@@ -23,6 +26,7 @@ const activeLink = ({ isActive }) => (isActive ? "active" : "");
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+<<<<<<< HEAD
   const { isLoggedin, setIsLoggedin } = useGlobalContext();
   //   const [name, setName] = useState<string | null>("");
 
@@ -49,6 +53,37 @@ const Header = () => {
     } else {
       document.getElementById("header").style.backgroundColor = "transparent";
     }
+=======
+  const {isLoggedin,setIsLoggedin} = useGlobalContext()
+
+  const location = useLocation()
+  const currentRoute = location.pathname
+  const getCurrentRoute = () => {
+    if(currentRoute === '/' || currentRoute === '/about' || currentRoute === '/events' || currentRoute === '/contact'){
+      return true
+    }
+    else return false
+  }
+  console.log(currentRoute)
+
+  useEffect(() => {
+    getCurrentRoute()
+    changeColor()
+  },[currentRoute])
+
+
+function changeColor() {
+  if(window.scrollY <= 90 && getCurrentRoute()){
+    document.getElementById("header").style.backgroundColor="transparent";
+  }
+  else if(window.scrollY <= 90){
+    document.getElementById("header").style.backgroundColor="#274d5a";
+  }
+  else if (window.scrollY >= 90) {
+    document.getElementById("header").style.backgroundColor="#274d5a";
+  } else {
+    document.getElementById("header").style.backgroundColor="transparent";
+>>>>>>> 5e5e31d28752c18b8437e01da15c2bc9811a9f79
   }
   window.addEventListener("scroll", changeColor);
 

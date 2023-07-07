@@ -127,4 +127,6 @@ const history = [
     src: "https://img.freepik.com/premium-vector/people-standing-podium-rank-first-three-places-jumps-air-with-trophy-cup_503038-712.jpg?w=1380",
   },
 ];
-export { TeamData, CaroselImages, products, history, projects };
+
+const Sponsors=["https://rcai.pk/img/clients/11.png","https://rcai.pk/img/clients/12.png","https://rcai.pk/img/clients/16.png","https://rcai.pk/img/clients/14.png","https://rcai.pk/img/clients/15.png","https://rcai.pk/img/clients/25.jpg","https://rcai.pk/img/clients/19.png","https://rcai.pk/img/clients/21.png","https://rcai.pk/img/clients/24.png"]
+export { TeamData, CaroselImages, products, history, projects ,Sponsors};

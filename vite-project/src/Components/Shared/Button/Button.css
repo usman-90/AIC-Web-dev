@@ -1,26 +1,13 @@
-.button{
-    padding: 0.75rem 1.5rem; 
-    transition-duration: 300ms; 
-    color: black; 
-    font-size: 1rem;
-    line-height: 1.5rem; 
-    font-weight: 500; 
-    border-radius: 9999px; 
-    background-color:aqua;
+.buttonContainer{
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    margin-top:28px;
+}
+.hello{
+    width:300px;
+    pad: 4px;
+    border-radius: 10px;
+    
 }
 
-.button:hover{
-    transform: scale(1.1);
-    transition-duration: 300ms;
-}
-
-@media (min-width: 768px) { 
-  .button{
-    padding-top: 1rem;
-    padding-bottom: 1rem; 
-    padding-left: 1.75rem;
-    padding-right: 1.75rem; 
-    font-size: 1.125rem;
-    line-height: 1.75rem; 
-}
- }
