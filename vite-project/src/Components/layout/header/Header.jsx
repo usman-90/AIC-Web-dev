@@ -148,6 +148,6 @@ function changeColor() {
       </header>
     </>
   );
-};
+}
 
 export default Header;
